@@ -29,15 +29,15 @@ const findNumber = (number, array) => {
 		}
 	}
 
-	const middleArrayIndex = Math.ceil((array.length - 1) / 2);
-	const middleArrayElement = array[Math.ceil(middleArrayIndex)];
+	const middleArrayElementIndex = Math.ceil((array.length - 1) / 2);
+	const middleArrayElement = array[Math.ceil(middleArrayElementIndex)];
 
 	if (middleArrayElement === number) {
 		return console.log(true);
 	} else if (middleArrayElement > number) {
-		findNumber(number, array.slice(0, middleArrayIndex));
+		findNumber(number, array.slice(0, middleArrayElementIndex));
 	} else if (middleArrayElement < number) {
-		findNumber(number, array.slice(middleArrayIndex + 1));
+		findNumber(number, array.slice(middleArrayElementIndex + 1));
 	}
 };
 
