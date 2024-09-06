@@ -4,7 +4,7 @@ const arr = [
 	[133, 149],
 ];
 
-const findNumber = (number, array) => {
+const isNumberInArray = (number, array) => {
 	if (array.length === 1) {
 		if (array[0] === number) {
 			return console.log(true);
@@ -19,16 +19,16 @@ const findNumber = (number, array) => {
 	if (middleArrayElement === number) {
 		return console.log(true);
 	} else if (middleArrayElement > number) {
-		findNumber(number, array.slice(0, middleArrayElementIndex));
+		isNumberInArray(number, array.slice(0, middleArrayElementIndex));
 	} else if (middleArrayElement < number) {
-		findNumber(number, array.slice(middleArrayElementIndex + 1));
+		isNumberInArray(number, array.slice(middleArrayElementIndex + 1));
 	}
 };
 
 const isNumberInArrayOfNumbers = (number, array) => {
 	for (let i = 0; i < array.length; i++) {
 		if (number >= array[i][0] && number <= array[i].at(-1)) {
-			return findNumber(number, array[i]);
+			return isNumberInArray(number, array[i]);
 		}
 	}
 
