@@ -18,7 +18,7 @@
 // isNumberInArrayOfNumbers(21, arr); //true
 // isNumberInArrayOfNumbers(221, arr); //false
 
-const arr = [1, 2, 3];
+const arr = [12, 20, 36, 45, 51, 70];
 
 const findNumber = (number, array) => {
 	if (array.length === 1) {
@@ -29,13 +29,16 @@ const findNumber = (number, array) => {
 		}
 	}
 
-	if (array[Math.ceil((array.length - 1) / 2)] === number) {
+	const middleArrayIndex = Math.ceil((array.length - 1) / 2);
+	const middleArrayElement = array[Math.ceil(middleArrayIndex)];
+
+	if (middleArrayElement === number) {
 		return console.log(true);
-	} else if (array[Math.ceil((array.length - 1) / 2)] > number) {
-		findNumber(number, array.slice(0, (array.length - 1) / 2));
-	} else if (array[Math.ceil((array.length - 1) / 2)] < number) {
-		findNumber(number, array.slice((array.length - 1) / 2 + 1));
+	} else if (middleArrayElement > number) {
+		findNumber(number, array.slice(0, middleArrayIndex));
+	} else if (middleArrayElement < number) {
+		findNumber(number, array.slice(middleArrayIndex + 1));
 	}
 };
 
-findNumber(2, arr);
+findNumber(20, arr);
