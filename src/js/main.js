@@ -1,40 +1,26 @@
-const arr = [
-	[3, 21, 37],
-	[61, 79, 101, 120],
-	[133, 149],
-];
-
-const isNumberInArray = (number, array) => {
-	if (array.length === 1) {
-		if (array[0] === number) {
-			return console.log(true);
-		} else {
-			return console.log(false);
-		}
-	}
-
-	const middleArrayElementIndex = Math.ceil((array.length - 1) / 2);
-	const middleArrayElement = array[Math.ceil(middleArrayElementIndex)];
-
-	if (middleArrayElement === number) {
-		return console.log(true);
-	} else if (middleArrayElement > number) {
-		isNumberInArray(number, array.slice(0, middleArrayElementIndex));
-	} else if (middleArrayElement < number) {
-		isNumberInArray(number, array.slice(middleArrayElementIndex + 1));
-	}
+const car1 = {
+	drive() {
+		console.log('Driving');
+	},
 };
 
-const isNumberInArrayOfNumbers = (number, array) => {
-	for (let i = 0; i < array.length; i++) {
-		if (number >= array[i][0] && number <= array[i].at(-1)) {
-			return isNumberInArray(number, array[i]);
-		}
-	}
-
-	return console.log(false);
+const car2 = {
+	drive() {
+		console.log('Driving');
+	},
 };
 
-isNumberInArrayOfNumbers(0, arr); //false
-isNumberInArrayOfNumbers(21, arr); //true
-isNumberInArrayOfNumbers(221, arr); //false
+car1.drive();
+car2.drive();
+
+class Vehicle {
+	drive() {
+		console.log('Driving');
+	}
+}
+
+const car3 = new Vehicle();
+const car4 = new Vehicle();
+
+car3.drive();
+car4.drive();
