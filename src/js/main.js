@@ -75,3 +75,23 @@ VehicleOld3.prototype.drive = function () {
 	console.log('Driving');
 };
 // prawidłowa metoda dodawania funkcji do prototypu konstruktora (stara metoda zapisu - bez użycia klas)
+
+// =====================================
+console.log('----------');
+
+class BasicVehicle {
+	drive() {
+		console.log('Driving');
+	}
+}
+
+class SuperVehicle extends BasicVehicle {
+	brake() {
+		console.log('Braking');
+	}
+}
+
+const basicCar = new BasicVehicle();
+const superCar = new SuperVehicle();
+superCar.brake();
+basicCar.brake();
