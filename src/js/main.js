@@ -94,4 +94,20 @@ class SuperVehicle extends BasicVehicle {
 const basicCar = new BasicVehicle();
 const superCar = new SuperVehicle();
 superCar.brake();
-basicCar.brake();
+// basicCar.brake(); // metoda/funkcja 'brake' nie istnieje w obiekcie basicCar
+
+// =====================================
+console.log('----------');
+
+const vehicle10 = {
+	drive() {
+		console.log('Driving');
+	},
+};
+
+const car10 = Object.create(vehicle10);
+car10.drive();
+
+const car11 = {};
+Object.setPrototypeOf(car11, vehicle10);
+car11.drive();
