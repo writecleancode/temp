@@ -1,46 +1,23 @@
-function countVar() {
-	for (var i = 0; i < 5; i++) {
-		console.log(i);
-	}
-
-	console.log(i);
+if (true) {
+	var varVariable = 'This is true';
 }
 
-function countLet() {
-	for (let i = 0; i < 5; i++) {
-		console.log(i);
-	}
+console.log(varVariable);
 
-	// console.log(i);     // causes error
+if (true) {
+	let letVariable = 'This is true';
 }
 
-countVar();
-console.log('-----');
-countLet();
+// console.log(letVariable);		// throws error
 
 // =====================================
 console.log('---------------------');
 
-function countColorVar() {
-	for (let i = 0; i < 5; i++) {
-		if (true) {
-			var color = 'red';
-		}
-	}
+var varVariable = 'False!';
+console.log(varVariable);
 
-	console.log(color);
-}
+// =====================================
+console.log('---------------------');
 
-function countColorLet() {
-	for (let i = 0; i < 5; i++) {
-		if (true) {
-			let color = 'red';
-		}
-	}
-
-	console.log(color);		// causes error
-}
-
-countColorVar();
-console.log('-----');
-countColorLet();	
+console.log(anotherVarVariable); // returs undefined insted of throwing error
+var anotherVarVariable = 'test message';
