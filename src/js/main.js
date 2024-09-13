@@ -1,5 +1,8 @@
-console.log("1");
+console.log("start");
 
-console.log("2");
+// microtask
+queueMicrotask(() => {
+   console.log("queueMicrotask");
+});
 
-console.log("3");
+console.log("end");
