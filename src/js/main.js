@@ -1,9 +1,9 @@
 console.log("start");
 
-// microtask
-queueMicrotask(() => {
-   console.log("queueMicrotask");
-});
+// macrotask
+setTimeout(() => {
+   console.log("setTimeout 0");
+}, 0);
 
 // microtask
 Promise.resolve().then(() => {
