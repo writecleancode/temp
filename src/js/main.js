@@ -1,8 +1,8 @@
 console.log("start");
 
 // microtask
-queueMicrotask(() => {
-   console.log("queueMicrotask");
-});
+Promise.resolve().then(() => {
+    console.log("Promise");
+  });
 
 console.log("end");
