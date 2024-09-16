@@ -49,3 +49,16 @@ function swimmer({ name }) {
 
 const testObject = swimmer({ name: 'test' });
 testObject.swim();
+
+// ---
+function swimmingMonsterCreator(name) {
+	const monster = { name: name };
+
+	return {
+		...monster,
+		...swimmer(monster),
+	};
+}
+
+const dolphin = swimmingMonsterCreator('dolphin');
+dolphin.swim();
