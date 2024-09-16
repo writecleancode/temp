@@ -1,27 +1,39 @@
-console.log("start");
+class Monster {
+	constructor(name) {
+		this.name = name;
+	}
 
-setTimeout(() => {
-   console.log("setTimeout 3000 ms");
-}, 3000);
+	attack() {
+		console.log(`${this.name} attacked`);
+	}
 
-Promise.resolve().then(() => {
-   console.log("Promise 1");
-});
+	walk() {
+		console.log(`${this.name} walked`);
+	}
+}
 
-setTimeout(() => {
-   console.log("setTimeout 2000 ms");
-}, 2000);
+class FlyingMonster extends Monster {
+	fly() {
+		console.log(`${this.name} flew`);
+	}
+}
 
-setTimeout(() => {
-   console.log("setTimeout 1000 ms");
-}, 1000);
+class SwimmingMonster extends Monster {
+	swim() {
+		console.log(`${this.name} swam`);
+	}
+}
 
-setTimeout(() => {
-   console.log("setTimeout 0 ms");
-}, 0);
+const bear = new Monster('bear');
+bear.walk();
+bear.attack();
 
-Promise.resolve().then(() => {
-   console.log("Promise 2");
-});
+const eagle = new FlyingMonster('eagle');
+eagle.walk();
+eagle.attack();
+eagle.fly();
 
-console.log("end");
+const shark = new SwimmingMonster('shark');
+shark.walk();
+shark.attack();
+shark.swim();
