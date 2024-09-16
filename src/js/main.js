@@ -41,6 +41,13 @@ shark.swim();
 // =====================================
 console.log('---------------');
 
+function attackerAndWalker({ name }) {
+	return {
+		attack: () => console.log(`${name} attacked`),
+		walk: () => console.log(`${name} walked`),
+	};
+}
+
 function swimmer({ name }) {
 	return {
 		swim: () => console.log(`${name} swam`),
@@ -58,24 +65,29 @@ function swimmingMonsterCreator(name) {
 
 	return {
 		...monster,
+		...attackerAndWalker(monster),
 		...swimmer(monster),
 	};
 }
 
-const dolphin = swimmingMonsterCreator('dolphin');
-dolphin.swim();
-
-// -----
 function flyingSwimmingMonsterCreator(name) {
 	const monster = { name: name };
 
 	return {
 		...monster,
+		...attackerAndWalker(monster),
 		...swimmer(monster),
 		...flyer(monster),
 	};
 }
 
+const dolphin = swimmingMonsterCreator('dolphin');
+dolphin.walk();
+dolphin.attack();
+dolphin.swim();
+
 const duck = flyingSwimmingMonsterCreator('duck');
+duck.walk();
+duck.attack();
 duck.swim();
 duck.fly();
