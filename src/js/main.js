@@ -47,10 +47,12 @@ function swimmer({ name }) {
 	};
 }
 
-const testObject = swimmer({ name: 'test' });
-testObject.swim();
+function flyer({ name }) {
+	return {
+		fly: () => console.log(`${name} flew`),
+	};
+}
 
-// ---
 function swimmingMonsterCreator(name) {
 	const monster = { name: name };
 
@@ -62,3 +64,18 @@ function swimmingMonsterCreator(name) {
 
 const dolphin = swimmingMonsterCreator('dolphin');
 dolphin.swim();
+
+// -----
+function flyingSwimmingMonsterCreator(name) {
+	const monster = { name: name };
+
+	return {
+		...monster,
+		...swimmer(monster),
+		...flyer(monster),
+	};
+}
+
+const duck = flyingSwimmingMonsterCreator('duck');
+duck.swim();
+duck.fly();
