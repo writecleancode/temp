@@ -37,3 +37,15 @@ const shark = new SwimmingMonster('shark');
 shark.walk();
 shark.attack();
 shark.swim();
+
+// =====================================
+console.log('---------------');
+
+function swimmer({ name }) {
+	return {
+		swim: () => console.log(`${name} swam`),
+	};
+}
+
+const testObject = swimmer({ name: 'test' });
+testObject.swim();
