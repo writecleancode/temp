@@ -1,18 +1,19 @@
-const human = {
-	kind: 'Human'
+function Dude(name) {
+	this.name = name;
 }
 
-const sina = Object.create(human)
-sina.age = 34
+const me = new Dude('Sina');
 
-console.log(sina);
-console.log(sina.age);
-console.log(sina.kind);
+console.log(me);
+console.log(me.prototype);
+console.log(me.__proto__);
+console.log(Dude.prototype);
+console.log(Dude.prototype === me.__proto__);
 
-const ben = Object.create(sina)
-ben.age = 12
+Dude.prototype.talk = function () {
+	console.log('Talking');
+};
 
-console.log(ben);
-console.log(ben.age);
-console.log(ben.__proto__.age);
-console.log(ben.kind);
+me.talk();
+
+console.log(me.__proto__);
