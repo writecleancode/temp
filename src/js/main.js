@@ -1,19 +1,15 @@
-function Dude(name) {
-	this.name = name;
+function carFactory(brand, model) {
+	return {
+		drive() {
+			console.log(`I drove ${brand} ${model}.`);
+		},
+	};
 }
 
-const me = new Dude('Sina');
+const car1 = carFactory('Volkswagen', 'Golf');
+const car2 = carFactory('Alfa Romeo', '147');
 
-console.log(me);
-console.log(me.prototype);
-console.log(me.__proto__);
-console.log(Dude.prototype);
-console.log(Dude.prototype === me.__proto__);
+car1.drive();
+car2.drive();
 
-Dude.prototype.talk = function () {
-	console.log('Talking');
-};
-
-me.talk();
-
-console.log(me.__proto__);
+console.log(car1);
