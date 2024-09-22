@@ -1,15 +1,11 @@
-function carFactory(brand, model) {
-	return {
-		drive() {
-			console.log(`I drove ${brand} ${model}.`);
-		},
-	};
+// comments show what happens under the hood
+
+function Person(name) {
+	// const this = {}
+	this.name = name;
+	// return this
 }
 
-const car1 = carFactory('Volkswagen', 'Golf');
-const car2 = carFactory('Alfa Romeo', '147');
+const sina = new Person('Sina');
 
-car1.drive();
-car2.drive();
-
-console.log(car1);
+console.log(sina);
