@@ -1,8 +1,5 @@
-const testObj = {
-	brand: 'Volkswagen',
-	model: function () {
-		console.log(this);
-	},
-};
+const testVal1 = 'Volkswagen';
+const testVal2 = 'volkswagen';
 
-testObj.model();
+console.log(testVal1 === testVal2);
+console.log(testVal1.toLowerCase() === testVal2);
