@@ -1,11 +1,8 @@
-// comments show what happens under the hood
+const testObj = {
+	brand: 'Volkswagen',
+	model: function () {
+		console.log(this);
+	},
+};
 
-function Person(name) {
-	// const this = {}
-	this.name = name;
-	// return this
-}
-
-const sina = new Person('Sina');
-
-console.log(sina);
+testObj.model();
